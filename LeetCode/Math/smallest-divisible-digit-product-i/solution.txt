@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int mult(int n){
+        int m = 1;
+        while(n){
+            m *= n%10;
+            n/=10;
+        }
+        return m;
+    }
+    int smallestNumber(int n, int t) {
+        for(int i=n; i<=n+10; i++){
+            if(mult(i) % t == 0) return i;
+        }
+        return 100;
+    }
+};
